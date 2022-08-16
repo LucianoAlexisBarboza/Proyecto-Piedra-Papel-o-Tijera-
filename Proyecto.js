@@ -4,9 +4,15 @@ function getComputerChoice() {
     return random [Math.floor(Math.random()*random.length)];
 }
 
+function getPlayerChoice() {
+   return Player = prompt("Rock, Paper or Scissors?");
+}
+
+
+
 function playRound(playerSelection) {
     let computerSelection = getComputerChoice();
-    if (playerSelection === "Rock") {
+    if (playerSelection === "Rock".toLowerCase()) {
         if (computerSelection === "Paper") {
             computerScore++;
             console.log("You lose");
@@ -14,7 +20,7 @@ function playRound(playerSelection) {
             playerScore++;
             console.log("You win");
         } else console.log("Draw");
-    } else if (playerSelection === "Paper") {
+    } else if (playerSelection === "Paper".toLowerCase()) {
         if (computerSelection === "Rock") {
             playerScore++;
             console.log("You win");
@@ -22,7 +28,7 @@ function playRound(playerSelection) {
             computerScore++;
             console.log("You lose"); 
         } else console.log("Draw");
-    } else if (playerSelection === "Scissors") {
+    } else if (playerSelection === "Scissors".toLowerCase()) {
         if (computerSelection === "Rock") {
             computerScore++;
             console.log("You lose");
@@ -37,10 +43,10 @@ function playRound(playerSelection) {
 let computerScore = 0;
 let playerScore = 0;
 
-function game(totalScore) {
+function game() {
     for (let i = 0; i < 5; i++) {
-        let playerSelection = prompt("Rock, Paper or Scissors?");
-        playRound(playerSelection)
+        let playerSelection = getPlayerChoice();
+        playRound(playerSelection);            
      }
 }
 
@@ -51,7 +57,6 @@ function score() {
         console.log("You win this game, Congratulations!")
     } else console.log("Its a draw, press F5 to start again.")
 }
-
 console.log(game())
 console.log(score())
 
