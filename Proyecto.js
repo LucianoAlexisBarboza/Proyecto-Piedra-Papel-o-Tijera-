@@ -16,36 +16,35 @@ buttons.forEach((button) => {
     let computerSelection = getComputerChoice();
     if (button.id === "1") {
         if (computerSelection === "Paper") {
-            console.log("You lose");
             computerScore++;
             computer.textContent = computerScore;
         } else if (computerSelection === "Scissors") {
-            console.log("You win");
             playerScore++;
             player.textContent = playerScore;
-        } else console.log("Draw");
+        }
     } else if (button.id === "2") {
         if (computerSelection === "Rock") {
-            console.log("You win");
             playerScore++;
             player.textContent = playerScore;
         } else if (computerSelection === "Scissors") {
-            console.log("You lose"); 
             computerScore++;
             computer.textContent = computerScore;
-        } else console.log("Draw");
+        }
     } else if (button.id === "3") {
         if (computerSelection === "Rock") {
-            console.log("You lose"); 
             computerScore++;
             computer.textContent = computerScore;
         } else if (computerSelection === "Paper") {
-            console.log("You win");
             playerScore++;
             player.textContent = playerScore;
-        } else console.log("Draw");
+        }
+    }
+    if (computerScore === 3) {
+        console.log("You Lose");
+        document.getElementById("divA").textContent = "Perdiste! Presiona F5 para volver a jugar!";   
+    } else if(playerScore === 3) {
+        console.log("You Win");
+        document.getElementById("divA").textContent = "Felicitaciones, ganaste!";       
     }
   });
 });
-
-
